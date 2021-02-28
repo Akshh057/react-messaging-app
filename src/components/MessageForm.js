@@ -39,12 +39,11 @@ const MessageForm = (props) => {
             <input
                 type='file'
                 multiple={false}
-                value={value}
                 id="upload-button"
+                onChange={handleUpload.bind(this)}
                 style={{
                     display: 'none'
                 }}
-                onChange={handleUpload}
             />
             <button type="submit">
                 <SendOutlined className="send-icon" />
