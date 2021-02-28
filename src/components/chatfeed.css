@@ -1,0 +1,14 @@
+.btn_logout{
+    margin-left: 20px; 
+    height: 4vh; 
+    width: 70px; 
+    background-color: transparent; 
+    border: 1px solid #3B2A50;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.btn_logout:hover{
+    background-color: #3B2A50;
+    color: white;
+    transform: scale(1.1);
+}

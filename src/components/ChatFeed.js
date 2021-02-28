@@ -2,6 +2,7 @@ import React from 'react'
 import MyMessage from './MyMessage';
 import MessageForm from './MessageForm';
 import TheirMessage from './TheirMessage';
+import './chatfeed.css'
 const ChatFeed = (props) => {
     const { chats, activeChat, userName, messages } = props;
 
@@ -54,6 +55,15 @@ const ChatFeed = (props) => {
                     {
                         chat?.title
                     }
+                    <button onClick={
+                        () => {
+                            localStorage.removeItem('username')
+                            localStorage.removeItem('password')
+                            window.location.reload();
+                        }
+                    } className="btn_logout">
+                        Logout
+                    </button>
                 </div>
                 <div className="chat-subtitle">
                     {
