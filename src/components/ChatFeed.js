@@ -55,9 +55,7 @@ const ChatFeed = (props) => {
             )
         })
     }
-    useEffect(() => {
-        console.log("hello");
-    }, [renderMessages])
+
     if (!chat) return 'Loading...';
 
     return (

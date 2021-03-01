@@ -13,8 +13,7 @@ const MyMessage = ({ message }) => {
             />
         );
     }
-    // if(moment(message.created).format(MMMM Do YYYY))
-    console.log(moment(message.created).format('MMMM DO YYYY') === moment().format('MMMM DO YYYY'));
+
     if (moment(message.created).format('MMMM DO YYYY') === moment().format('MMMM DO YYYY'))
         time = true;
     else
