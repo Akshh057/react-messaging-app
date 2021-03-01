@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MyMessage from './MyMessage';
 import MessageForm from './MessageForm';
 import TheirMessage from './TheirMessage';
 import './chatfeed.css'
-const ChatFeed = (props) => {
-    const { chats, activeChat, userName, messages } = props;
+import { animateScroll } from "react-scroll";
 
+const ChatFeed = (props) => {
+    useEffect(() => {
+        scrollToBottom();
+
+    })
+    const scrollToBottom = () => {
+        animateScroll.scrollToBottom({
+            containerId: "message"
+        });
+    }
+    const { chats, activeChat, userName, messages } = props;
     const chat = chats && chats[activeChat];
 
     const renderReadReceipts = (message, isMyMessage) => {
@@ -23,7 +33,6 @@ const ChatFeed = (props) => {
 
     const renderMessages = () => {
         const keys = Object.keys(messages)
-
         return keys.map((key, index) => {
             const message = messages[key];
             const lastMessageKey = index === 0 ? null : keys[index - 1];
@@ -46,6 +55,9 @@ const ChatFeed = (props) => {
             )
         })
     }
+    useEffect(() => {
+        console.log("hello");
+    }, [renderMessages])
     if (!chat) return 'Loading...';
 
     return (
@@ -73,7 +85,7 @@ const ChatFeed = (props) => {
             </div>
             {renderMessages()}
             <div style={{ height: '100px' }} />
-            <div className="message-form-container">
+            <div className="message-form-container" id="message">
                 <MessageForm {...props} chatID={activeChat} />
             </div>
         </div>
