@@ -77,19 +77,20 @@
   }
   
   .chat-title-container {
-    width: calc(100% - 36px);
-    padding: 18px;
+    width: 100%;
+    padding: 14px;
+    background-color: #3B2A50;
     text-align: center;
   }
   
   .chat-title {
-    color: #7554a0;
+    color: white;
     font-weight: 800;
     font-size: 24px;
   }
   
   .chat-subtitle {
-    color: #7554a0;
+    color: white;
     font-weight: 600;
     font-size: 12px;
     padding-top: 4px;
@@ -104,7 +105,9 @@
   
   .message-block {
     width: 100%;
+    margin-top: 10px;
     display: inline-block;
+    
   }
   
   .message-avatar {
@@ -135,6 +138,7 @@
     max-width: 200px;
     min-height: 100px;
     min-width: 100px;
+    
   }
   
   .read-receipts {
