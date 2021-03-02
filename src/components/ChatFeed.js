@@ -15,6 +15,7 @@ const ChatFeed = (props) => {
             containerId: "message"
         });
     }
+    console.log(props);
     const { chats, activeChat, userName, messages } = props;
     const chat = chats && chats[activeChat];
 
@@ -65,6 +66,17 @@ const ChatFeed = (props) => {
                     {
                         chat?.title
                     }
+
+                </div>
+                <div className="logo">
+                    <span style={{ fontSize: '10px', marginLeft: '10px' }}>
+                        {
+                            chats[activeChat].people.map((e) => {
+                                if (e.person.username === userName)
+                                    return <img src={e.person.avatar} style={{ height: '50px', width: '50px', borderRadius: '50%', float: 'right' }} />
+                            })
+                        }
+                    </span>
                     <button onClick={
                         () => {
                             localStorage.removeItem('username')
@@ -77,7 +89,12 @@ const ChatFeed = (props) => {
                 </div>
                 <div className="chat-subtitle">
                     {
-                        `Users in the room:  ${chat?.people.map((person) => ` ${person.person.username} `)}`
+                        `Users in the room: 
+                         ${chat?.people.map((person) =>
+                            ` ${person.person.username === chats[activeChat].admin.username ?
+                                `${person.person.username} (Admin)`
+                                :
+                                `${person.person.username}`} `)}`
                     }
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { Picker } from 'emoji-mart'
 
 const MessageForm = (props) => {
 
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState([]);
     const [dis, setDis] = useState(false);
     const { chatID, creds, chats, userName } = props;
 
@@ -14,6 +14,7 @@ const MessageForm = (props) => {
         setValue(event.target.value);
 
         isTyping(props, chatID);
+        console.log(value);
 
     };
 
@@ -45,7 +46,6 @@ const MessageForm = (props) => {
         else
             setDis(false);
 
-        console.log(dis);
 
     }
     return (

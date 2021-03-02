@@ -1,11 +1,11 @@
 .btn_logout{
-    margin-left: 20px; 
     height: 4vh; 
     width: 70px; 
     background-color: transparent; 
     border: 1px solid white;
     cursor: pointer;
     color: white;
+    float: right;
     transition: 0.3s ease-in-out;
 }
 .btn_logout:hover{

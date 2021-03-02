@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { MessageOutlined } from '@ant-design/icons';
 
 const projectID = '9fdbbf6c-d615-4a3c-a1cd-e28627cefc77';
 const LoginForm = () => {
@@ -26,13 +27,14 @@ const LoginForm = () => {
     return (
         <div className="wrapper">
             <div className="form">
-                <h1 className="title">Chat Application</h1>
+                <h1 className="title">React Chat App</h1>
+                <MessageOutlined style={{ fontSize: "50px", color: "white" }} />
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required />
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
+                    <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required className="input" />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required className="input" />
                     <div align="center">
-                        <button type="submit" className="button">
-                            <span>Start chatting</span>
+                        <button type="submit" className="button" className="input1">
+                            Login
                         </button>
                     </div>
                 </form>
