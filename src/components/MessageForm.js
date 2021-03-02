@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { SendOutlined, PictureOutlined, PictureFilled, SmileFilled } from '@ant-design/icons';
+import { useState } from 'react';
+import { SendOutlined, PictureOutlined, SmileFilled } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
@@ -8,7 +8,7 @@ const MessageForm = (props) => {
 
     const [value, setValue] = useState([]);
     const [dis, setDis] = useState(false);
-    const { chatID, creds, chats, userName } = props;
+    const { chatID, creds } = props;
 
     const handleChange = (event) => {
         setValue(event.target.value);

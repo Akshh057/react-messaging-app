@@ -30,10 +30,10 @@ const LoginForm = () => {
                 <h1 className="title">React Chat App</h1>
                 <MessageOutlined style={{ fontSize: "50px", color: "white" }} />
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required className="input" />
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required className="input" />
+                    <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
                     <div align="center">
-                        <button type="submit" className="button" className="input1">
+                        <button type="submit" className="button input1">
                             Login
                         </button>
                     </div>

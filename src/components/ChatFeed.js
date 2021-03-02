@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import MyMessage from './MyMessage';
 import MessageForm from './MessageForm';
 import TheirMessage from './TheirMessage';
 import './chatfeed.css'
-import { animateScroll } from "react-scroll";
+// import { animateScroll } from "react-scroll";
 
 const ChatFeed = (props) => {
-    useEffect(() => {
-        scrollToBottom();
 
-    })
-    const scrollToBottom = () => {
-        animateScroll.scrollToBottom({
-            containerId: "message"
-        });
-    }
     console.log(props);
     const { chats, activeChat, userName, messages } = props;
     const chat = chats && chats[activeChat];
@@ -73,7 +65,9 @@ const ChatFeed = (props) => {
                         {
                             chats[activeChat].people.map((e) => {
                                 if (e.person.username === userName)
-                                    return <img src={e.person.avatar} style={{ height: '50px', width: '50px', borderRadius: '50%', float: 'right' }} />
+                                    return <img src={e.person.avatar} alt="Profile" style={{ height: '50px', width: '50px', borderRadius: '50%', float: 'right' }} />
+                                else
+                                    return null
                             })
                         }
                     </span>
